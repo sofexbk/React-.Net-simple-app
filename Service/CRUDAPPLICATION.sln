@@ -3,16 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRUDAPPLICATION", "CRUDAPPLICATION\CRUDAPPLICATION.csproj", "{C118695C-A3FF-4D99-B3C3-9AB42247868F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CRUDAPPLICATION", "CRUDAPPLICATION\CRUDAPPLICATION.csproj", "{C118695C-A3FF-4D99-B3C3-9AB42247868F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Docker|Any CPU = Docker|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{C118695C-A3FF-4D99-B3C3-9AB42247868F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C118695C-A3FF-4D99-B3C3-9AB42247868F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C118695C-A3FF-4D99-B3C3-9AB42247868F}.Docker|Any CPU.ActiveCfg = Debug|Any CPU
+		{C118695C-A3FF-4D99-B3C3-9AB42247868F}.Docker|Any CPU.Build.0 = Debug|Any CPU
 		{C118695C-A3FF-4D99-B3C3-9AB42247868F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C118695C-A3FF-4D99-B3C3-9AB42247868F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
