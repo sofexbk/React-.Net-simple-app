@@ -23,6 +23,7 @@ namespace CRUDAPPLICATION.Controllers
 
             }
             return await _dbContext.Brands.ToListAsync();
+
         }
         [HttpGet("{id}")]
         public async Task<ActionResult<Brand>> GetBrand(int id)

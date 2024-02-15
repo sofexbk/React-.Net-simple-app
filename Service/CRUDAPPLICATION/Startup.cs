@@ -21,11 +21,10 @@ namespace CRUDAPPLICATION
         {
             services.AddControllers();
 
-               services.AddDbContext<BrandContext>(options =>
+            services.AddDbContext<BrandContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("BrandCS")));
 
             services.AddCors();
-
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -34,7 +33,6 @@ namespace CRUDAPPLICATION
             options.WithOrigins("http://localhost:3000")
             .AllowAnyHeader()
             .AllowAnyMethod());
-
 
             if (env.IsDevelopment())
             {

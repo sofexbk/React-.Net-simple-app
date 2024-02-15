@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchBrands } from './actions/brandActions';
+import { fetchBrands, deleteBrand } from './actions/brandActions';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Home = () => {
   const brands = useSelector(state => state.brandReducer.brands);
@@ -9,6 +11,17 @@ const Home = () => {
   useEffect(() => {
     dispatch(fetchBrands());
   }, [dispatch]);
+
+  const handleDelete = async (id) => {
+    try {
+      await dispatch(deleteBrand(id));
+      await dispatch(fetchBrands());
+      toast.success('Brand deleted successfully!');
+    } catch (error) {
+      console.error('Error deleting brand:', error);
+      toast.error('An error occurred while deleting the brand.');
+    }
+  };
 
   return (
     <div style={{ textAlign: 'center' }}>
@@ -35,13 +48,14 @@ const Home = () => {
                 <td>{brand.isActive ? 'Yes' : 'No'}</td>
                 <td>
                   <button type="button" className="btn btn-primary" style={{ marginRight: '10px' }}>Primary</button>
-                  <button type="button" className="btn btn-danger">Danger</button>
+                  <button type="button" className="btn btn-danger" onClick={() => handleDelete(brand.id)}>Danger</button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       )}
+      <ToastContainer />
     </div>
   );
 };

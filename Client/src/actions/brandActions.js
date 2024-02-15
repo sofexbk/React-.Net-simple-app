@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { ActionTypes } from './actionTypes';
 
-
 export const fetchBrandsRequest = () => ({
     type: ActionTypes.FETCH_BRANDS_REQUEST
   });
@@ -15,15 +14,14 @@ export const fetchBrandsRequest = () => ({
     type: ActionTypes.FETCH_BRANDS_FAILURE,
     payload: error
   });
-  
   export const fetchBrands = () => {
     return async (dispatch) => {
-      dispatch(fetchBrandRequest());
+      dispatch(fetchBrandsRequest());
       try {
         const response = await axios.get('/api/Brand');
         dispatch(fetchBrandsSuccess(response.data));
       } catch (error) {
-        dispatch(fetchBrandFailure(error.message));
+        dispatch(fetchBrandsFailure('An error occurred'));
       }
     };
   };

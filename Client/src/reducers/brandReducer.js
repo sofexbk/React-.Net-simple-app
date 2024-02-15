@@ -1,4 +1,3 @@
-// reducers/brandReducer.js
 
 import { ActionTypes } from '../actions/actionTypes';
 
