@@ -10,6 +10,6 @@ namespace CRUDAPPLICATION.Models
         public int Id { get; set; }
         public string? Name { get; set; }
         public string? Category { get; set; }
-        public int IsActive { get; set; }
+        public bool IsActive { get; set; }
     }
 }
